@@ -1,0 +1,11 @@
+{
+    "section1": {
+        "files": [
+            {
+                "type": "image",
+                "key": "loading-background",
+                "url": "assets/images/ui/background.png"
+            }
+        ]
+    }
+}

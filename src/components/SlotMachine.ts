@@ -83,32 +83,36 @@ export default class SlotMachine {
         this.scene.add.image(this.x, this.y, 'background')
             .setDisplaySize(800, 600);
 
-        // Create credit display
-        this.creditText = this.scene.add.text(this.x, this.y - 200, 'CREDITS: 1000', {
+        // Create credit display - position higher up
+        this.creditText = this.scene.add.text(this.x, this.y - 220, 'CREDITS: 1000', {
             fontSize: '24px',
-            color: '#ffffff'
+            color: '#ffffff',
+            fontStyle: 'bold'
         }).setOrigin(0.5);
 
-        // Create bet display
-        this.betText = this.scene.add.text(this.x, this.y - 160, 'BET: 10', {
+        // Create bet display - position higher up but below credits
+        this.betText = this.scene.add.text(this.x, this.y - 180, 'BET: 10', {
             fontSize: '20px',
-            color: '#ffffff'
+            color: '#ffffff',
+            fontStyle: 'bold'
         }).setOrigin(0.5);
 
-        // Create win display
-        this.winText = this.scene.add.text(this.x, this.y + 200, '', {
+        // Create win display - move below the reels
+        this.winText = this.scene.add.text(this.x, this.y + 170, '', {
             fontSize: '32px',
-            color: '#ffff00'
+            color: '#ffff00',
+            fontStyle: 'bold'
         }).setOrigin(0.5);
 
-        // Create spin button
-        this.spinButton = this.scene.add.image(this.x, this.y + 250, 'button')
+        // Create spin button - move further down
+        this.spinButton = this.scene.add.image(this.x, this.y + 240, 'button')
             .setInteractive()
-            .setScale(1.5);
+            .setScale(1.2);
 
-        this.spinText = this.scene.add.text(this.x, this.y + 250, 'SPIN', {
+        this.spinText = this.scene.add.text(this.x, this.y + 240, 'SPIN', {
             fontSize: '24px',
-            color: '#000000'
+            color: '#000000',
+            fontStyle: 'bold'
         }).setOrigin(0.5);
 
         // Add button event
@@ -116,23 +120,25 @@ export default class SlotMachine {
             this.spin();
         });
 
-        // Create bet controls
-        this.betMinusButton = this.scene.add.image(this.x - 100, this.y + 250, 'button')
+        // Create bet controls - reposition and make smaller
+        this.betMinusButton = this.scene.add.image(this.x - 150, this.y + 240, 'button')
             .setInteractive()
-            .setScale(0.8);
+            .setScale(0.7);
 
-        this.betPlusButton = this.scene.add.image(this.x + 100, this.y + 250, 'button')
+        this.betPlusButton = this.scene.add.image(this.x + 150, this.y + 240, 'button')
             .setInteractive()
-            .setScale(0.8);
+            .setScale(0.7);
 
-        this.betMinusText = this.scene.add.text(this.x - 100, this.y + 250, '-', {
-            fontSize: '24px',
-            color: '#000000'
+        this.betMinusText = this.scene.add.text(this.x - 150, this.y + 240, '-', {
+            fontSize: '28px',
+            color: '#000000',
+            fontStyle: 'bold'
         }).setOrigin(0.5);
 
-        this.betPlusText = this.scene.add.text(this.x + 100, this.y + 250, '+', {
-            fontSize: '24px',
-            color: '#000000'
+        this.betPlusText = this.scene.add.text(this.x + 150, this.y + 240, '+', {
+            fontSize: '28px',
+            color: '#000000',
+            fontStyle: 'bold'
         }).setOrigin(0.5);
 
         // Add bet button events
@@ -149,6 +155,14 @@ export default class SlotMachine {
      * Create the reels
      */
     private createReels(): void {
+        // Add a frame for the slot machine before creating reels
+        const frameWidth = (REEL_COUNT * SYMBOL_WIDTH) + ((REEL_COUNT + 1) * REEL_SPACING) + 40;
+        const frameHeight = (SYMBOLS_PER_REEL) + 40;
+
+        // Add background frame
+        this.scene.add.image(this.x, this.y, 'frame')
+            .setDisplaySize(frameWidth, frameHeight);
+
         // Calculate positions
         const startX = this.x - ((REEL_COUNT - 1) * (SYMBOL_WIDTH + REEL_SPACING)) / 2;
 

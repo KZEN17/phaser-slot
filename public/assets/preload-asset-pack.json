@@ -1,0 +1,56 @@
+{
+    "section1": {
+        "files": [
+            {
+                "type": "image",
+                "key": "symbol1",
+                "url": "assets/images/symbols/symbol1.png"
+            },
+            {
+                "type": "image",
+                "key": "symbol2",
+                "url": "assets/images/symbols/symbol2.png"
+            },
+            {
+                "type": "image",
+                "key": "symbol3",
+                "url": "assets/images/symbols/symbol3.png"
+            },
+            {
+                "type": "image",
+                "key": "symbol4",
+                "url": "assets/images/symbols/symbol4.png"
+            },
+            {
+                "type": "image",
+                "key": "symbol5",
+                "url": "assets/images/symbols/symbol5.png"
+            },
+            {
+                "type": "image",
+                "key": "background",
+                "url": "assets/images/ui/background.png"
+            },
+            {
+                "type": "image",
+                "key": "button",
+                "url": "assets/images/ui/button.png"
+            },
+            {
+                "type": "image",
+                "key": "frame",
+                "url": "assets/images/ui/frame.png"
+            },
+            {
+                "type": "audio",
+                "key": "spin",
+                "url": "assets/audio/spin.mp3"
+            },
+            {
+                "type": "audio",
+                "key": "win",
+                "url": "assets/audio/win.mp3"
+            }
+        ]
+    }
+}

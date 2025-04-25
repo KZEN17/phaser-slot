@@ -11,7 +11,7 @@ export default class Symbol {
     constructor(scene: Phaser.Scene, x: number, y: number, texture: string) {
         this.scene = scene;
         this.sprite = scene.add.sprite(x, y, texture);
-        this.sprite.setScale(0.6); // Scale down the symbol to fit
+        this.sprite.setScale(0.2); // Scale down the symbol to fit
 
         // Store the symbol type (for win calculations)
         this.type = texture;

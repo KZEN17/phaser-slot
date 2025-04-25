@@ -8,29 +8,15 @@ export default class BootScene extends Phaser.Scene {
     constructor() {
         super({ key: 'BootScene' });
     }
-
     preload(): void {
         // Create loading bar
         this.createLoadingBar();
 
-        // Load symbol assets
-        SYMBOLS.forEach((symbol) => {
-            this.load.image(symbol, `assets/images/symbols/${symbol}.png`);
-        });
+        // Load the preload asset pack
+        this.load.pack("preload", "assets/preload-asset-pack.json");
 
-        // Load UI assets
-        this.load.image('background', 'assets/images/ui/background.jpg');
-        this.load.image('button', 'assets/images/ui/button.png');
-        this.load.image('frame', 'assets/images/ui/frame.png');
-
-        // Load audio assets
-        this.load.audio('spin', 'assets/audio/spin.mp3');
-        this.load.audio('win', 'assets/audio/win.mp3');
-
-        // For development, we can use placeholder assets if our assets aren't ready
-        // Note: In production, you would have your own assets
+        // Fallback to placeholders if needed
         this.load.once('complete', () => {
-            // Try to load placeholders for any missing assets
             this.loadPlaceholders();
         });
     }
